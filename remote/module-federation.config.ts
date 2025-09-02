@@ -3,6 +3,8 @@ export const mfConfig = {
   filename: "remoteEntry.js",
   exposes: {
     "./Button": "./src/components/Button", // This must be a valid path
+    "./Greeting":"./src/Components/Greeting",
+    
   },
   shared: ["react", "react-dom"],
 };

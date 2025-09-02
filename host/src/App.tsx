@@ -16,21 +16,29 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom/client"; // ✅ This import is essential
 import List from "remote4/List";
+import TextField from '@mui/material/TextField';
+
 
 const RemoteButton = React.lazy(() => import("remote/Button"));
+const GreetButton = React.lazy(()=> import("remote/Greeting"));
 const RemoteCount = React.lazy(() => import("remote1/Count"));
 const RemoteDecrement= React.lazy(() => import("remote2/Decrement"));
 const Fetch= React.lazy(()=>import("remote3/Fetch"));
 const ListItem= React.lazy(()=>import("remote4/List"));
 
-
-
 const App = () => {
   return (
     <div>
       <h1>Host App</h1>
+      {/* <TextField variant="outlined"/> */}
+
+
       <Suspense fallback={<div>Loading remote button...</div>}>
         <RemoteButton />
+      </Suspense>
+
+      <Suspense fallback={<div>Loading remote button...</div>}>
+        <GreetButton />
       </Suspense>
       <Suspense fallback={<div>Loading remote1 count...</div>}>
         <RemoteCount />
@@ -44,7 +52,7 @@ const App = () => {
       </Suspense>
 
       <Suspense fallback={<div>Listing the item</div>}>
-      <List/>
+      <ListItem/>
       </Suspense>
 
       

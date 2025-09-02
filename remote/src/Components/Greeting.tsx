@@ -2,7 +2,9 @@ import React from 'react'
 
 function Greeting() {
   return (
-    <div>Greeting</div>
+    <>
+    <button>React declaration testing</button>
+    </>
   )
 }
 
